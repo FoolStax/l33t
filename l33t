@@ -1,0 +1,32 @@
+#!/usr/bin/bash
+
+output=""
+input=$1
+
+for ((position=0; position< ${#input}; position++))
+do
+	temp=${input:position:1}
+	
+	if [[ "$temp" == "a" || "$temp" == "A" ]];
+	then
+		output=$output"@"
+	elif [[ "$temp" == "e" || "$temp" == "E" ]];
+	then
+		output=$output"3"
+	elif [[ "$temp" == "i" || "$temp" == "I" ]];
+	then
+		output=$output"!"
+	elif [[ "$temp" == "u" || "$temp" == "U" ]];
+	then
+		output=$output"|_|"
+	elif [[ "$temp" == "o" || "$temp" == "O" ]];
+	then
+		output=$output"0"
+	else
+		output=$output$temp
+	fi
+done
+
+echo
+echo $output
+echo
